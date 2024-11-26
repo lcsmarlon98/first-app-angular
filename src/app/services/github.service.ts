@@ -18,11 +18,11 @@ export class GithubService implements GithubHttpInterface {
     }
   }
 
-  getUsers(): HttpClient {
+  getUsers() {
     throw new Error('Method not implemented.');
   }
 
-  getUserByUsername(): HttpClient {
+  getUserByUsername() {
     throw new Error('Method not implemented.');
   }
 }
