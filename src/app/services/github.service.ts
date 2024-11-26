@@ -7,7 +7,7 @@ import { variables } from './../enviroments/enviroment'
   providedIn: 'root'
 })
 export class GithubService implements GithubHttpInterface {
-
+  
   headers;
 
   constructor(private http: HttpClient) { 
@@ -19,7 +19,9 @@ export class GithubService implements GithubHttpInterface {
   }
 
   getUsers() {
-    throw new Error('Method not implemented.');
+    return this.http.get(`${variables.urlBase}/users`, {
+      headers: this.headers
+    })
   }
 
   getUserByUsername() {
