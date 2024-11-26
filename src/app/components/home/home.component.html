@@ -7,3 +7,23 @@
         <button class="btn btn-outline-dark">search</button>
     </div>
 </div>
+
+<div class="row">
+    @for (user of allUsers; track $index) 
+    {
+        <div class="col-12 col-md-4 col-lg-3">
+            <div class="card shadow p-3 mb-4 bg-body rounded">
+                <div class="card-body d-flex">
+                    <div class="row text-center mb-3">
+                        <div class="col-12 mb-3">
+                            <img width="150" class="rounded" src="{{user.avatar_url}}" alt="">
+                        </div>
+                        <div class="col-12">
+                            <span class="user-login">{{user.login}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
