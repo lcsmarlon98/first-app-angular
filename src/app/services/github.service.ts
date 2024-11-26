@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GithubService implements GithubHttpInterface {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getUsers(): HttpClient {
     throw new Error('Method not implemented.');
