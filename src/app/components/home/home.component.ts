@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubApiService } from '../../services/github.service';
 import { GithubUserInterface } from '../../interfaces/github-user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,10 @@ export class HomeComponent implements OnInit {
 
   allUsers: GithubUserInterface[] = []
 
-  constructor (private http: GithubApiService) { }
+  constructor (
+    private http: GithubApiService, 
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.http.getUsers().subscribe((res: GithubUserInterface[]) => {
@@ -21,4 +25,7 @@ export class HomeComponent implements OnInit {
     }, (error: any) => console.error(error))
   }
   
+  searchUser(username: HTMLInputElement) {
+    this.router.navigateByUrl(`/search/${username.value}`);
+  }
 }
