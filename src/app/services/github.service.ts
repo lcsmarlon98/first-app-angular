@@ -12,7 +12,6 @@ export class GithubService implements GithubHttpInterface {
 
   constructor(private http: HttpClient) { 
     this.headers = {
-      'User-Agent': 'Awesome-Octocat-App',
       'Authorization': `Bearer ${variables.token}`,
       'X-GitHub-Api-Version': '2022-11-28',
     }
