@@ -7,7 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GithubService implements GithubHttpInterface {
 
-  constructor(private http: HttpClient) { }
+  headers;
+
+  constructor(private http: HttpClient) { 
+    this.headers = {
+      'User-Agent': 'Awesome-Octocat-App',
+      'Authorization': `Bearer ${variables.token}`,
+      'X-GitHub-Api-Version': '2022-11-28',
+    }
+  }
 
   getUsers(): HttpClient {
     throw new Error('Method not implemented.');
