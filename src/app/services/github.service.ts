@@ -7,7 +7,7 @@ import { GithubUserInterface } from '../interfaces/github-user.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class GithubService implements GithubHttpInterface {
+export class GithubApiService implements GithubHttpInterface {
   
   headers;
 

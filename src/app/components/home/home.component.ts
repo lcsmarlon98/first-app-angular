@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubService } from '../../services/github.service';
+import { GithubApiService } from '../../services/github.service';
 import { GithubUserInterface } from '../../interfaces/github-user.interface';
 
 @Component({
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   allUsers: GithubUserInterface[] = []
 
-  constructor (private http: GithubService) { }
+  constructor (private http: GithubApiService) { }
 
   ngOnInit(): void {
     this.http.getUsers().subscribe((res: GithubUserInterface[]) => {
