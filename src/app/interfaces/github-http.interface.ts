@@ -1,4 +1,4 @@
 export interface GithubHttpInterface {
     getUsers(): any
-    getUserByUsername(): any
+    getUserByUsername(username: string): any
 }
