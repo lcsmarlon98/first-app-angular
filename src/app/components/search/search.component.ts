@@ -10,12 +10,14 @@ import { GithubApiService } from '../../services/github.service';
 })
 export class SearchComponent implements OnInit {
 
+  username?:string
+
   constructor(private route: ActivatedRoute, private http: GithubApiService) {}
 
   ngOnInit(): void {
-    const username = this.route.snapshot.paramMap.get('username') || ""
+    this.username = this.route.snapshot.paramMap.get('username') || ""
 
-    this.http.getUserByUsername(username).subscribe((res) => {
+    this.http.getUserByUsername(this.username).subscribe((res) => {
       console.log('todos: ',res)
     }, (error: any) => console.error(error))
   }
