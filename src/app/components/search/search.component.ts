@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.username = this.route.snapshot.paramMap.get('username') || ""
 
-    this.http.getUserByUsername(this.username).subscribe((res) => {
+    this.http.getUserByUsername(this.username).subscribe((res: GithubUserInterface) => {
       console.log('todos: ',res)
     }, (error: any) => console.error(error))
   }
