@@ -8,71 +8,75 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-12 col-md-4 col-lg-3">
-        <div class="row">
-            <div class="col-12 mb-3">
-                <img width="200" src="{{user?.avatar_url}}" alt="{{user?.login}}-avatar">
+@if (empty) {
+    <h1>Not found</h1>
+} @else {
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-3">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <img width="200" src="{{user?.avatar_url}}" alt="{{user?.login}}-avatar">
+                </div>
+                <div class="col-12">
+                    <a href="{{user?.html_url}}">Acessar github</a>
+                </div>
             </div>
-            <div class="col-12">
-                <a href="{{user?.html_url}}">Acessar github</a>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <span class="label">Login: </span>
+                    <span class="value-user">{{user?.login}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">followers_url: </span>
+                    <span class="value-user">{{user?.followers_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">following_url: </span>
+                    <span class="value-user">{{user?.following_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">gists_url: </span>
+                    <span class="value-user">{{user?.gists_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">starred_url: </span>
+                    <span class="value-user">{{user?.starred_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">subscriptions_url: </span>
+                    <span class="value-user">{{user?.subscriptions_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">organizations_url: </span>
+                    <span class="value-user">{{user?.organizations_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">repos_url: </span>
+                    <span class="value-user">{{user?.repos_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">events_url: </span>
+                    <span class="value-user">{{user?.events_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">received_events_url: </span>
+                    <span class="value-user">{{user?.received_events_url}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">type: </span>
+                    <span class="value-user">{{user?.type}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">user_view_type: </span>
+                    <span class="value-user">{{user?.user_view_type}}</span>
+                </div>
+                <div class="col-12 mb-3">
+                    <span class="label">site_admin: </span>
+                    <span class="value-user">{{user?.site_admin}}</span>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-4">
-        <div class="row">
-            <div class="col-12 mb-3">
-                <span class="label">Login: </span>
-                <span class="value-user">{{user?.login}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">followers_url: </span>
-                <span class="value-user">{{user?.followers_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">following_url: </span>
-                <span class="value-user">{{user?.following_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">gists_url: </span>
-                <span class="value-user">{{user?.gists_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">starred_url: </span>
-                <span class="value-user">{{user?.starred_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">subscriptions_url: </span>
-                <span class="value-user">{{user?.subscriptions_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">organizations_url: </span>
-                <span class="value-user">{{user?.organizations_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">repos_url: </span>
-                <span class="value-user">{{user?.repos_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">events_url: </span>
-                <span class="value-user">{{user?.events_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">received_events_url: </span>
-                <span class="value-user">{{user?.received_events_url}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">type: </span>
-                <span class="value-user">{{user?.type}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">user_view_type: </span>
-                <span class="value-user">{{user?.user_view_type}}</span>
-            </div>
-            <div class="col-12 mb-3">
-                <span class="label">site_admin: </span>
-                <span class="value-user">{{user?.site_admin}}</span>
-            </div>
-        </div>
-    </div>
-</div>
+}

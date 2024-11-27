@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
 
   username?:string
   user?: GithubUserInterface
+  empty?: boolean
 
   constructor(private route: ActivatedRoute, private http: GithubApiService) {}
 
@@ -22,7 +23,10 @@ export class SearchComponent implements OnInit {
     this.http.getUserByUsername(this.username).subscribe((res: GithubUserInterface) => {
       this.user = res
       console.log(res)
-    }, (error: any) => console.error(error))
+    }, (error: any) => {
+      console.error(error)
+      this.empty = true
+    })
   }
 
 }
