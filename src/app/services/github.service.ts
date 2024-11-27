@@ -25,6 +25,8 @@ export class GithubApiService implements GithubHttpInterface {
   }
 
   getUserByUsername(username: string) {
-    throw new Error('Method not implemented.');
+    return this.http.get(`${variables.urlBase}/users/${username}`, {
+      headers: this.headers
+    })
   }
 }
