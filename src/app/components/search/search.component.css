@@ -1,0 +1,10 @@
+.label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.value-user {
+    font-size: 28px;
+    font-weight: 300;
+}
