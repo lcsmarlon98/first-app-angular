@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { GithubApiService } from '../../services/github.service';
 import { GithubUserInterface } from '../../interfaces/github-user.interface';
 
 @Component({
   selector: 'app-search',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
