@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GithubApiService } from '../../services/github.service';
+import { GithubUserInterface } from '../../interfaces/github-user.interface';
 
 @Component({
   selector: 'app-search',
@@ -11,6 +12,7 @@ import { GithubApiService } from '../../services/github.service';
 export class SearchComponent implements OnInit {
 
   username?:string
+  user?: GithubUserInterface
 
   constructor(private route: ActivatedRoute, private http: GithubApiService) {}
 
@@ -18,7 +20,8 @@ export class SearchComponent implements OnInit {
     this.username = this.route.snapshot.paramMap.get('username') || ""
 
     this.http.getUserByUsername(this.username).subscribe((res: GithubUserInterface) => {
-      console.log('todos: ',res)
+      this.user = res
+      console.log(res)
     }, (error: any) => console.error(error))
   }
 
