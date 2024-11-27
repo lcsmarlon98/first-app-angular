@@ -19,7 +19,9 @@
                             <img width="150" class="rounded" src="{{user.avatar_url}}" alt="">
                         </div>
                         <div class="col-12">
-                            <span class="user-login">{{user.login}}</span>
+                            <span class="user-login">
+                                <button class="btn btn-outline-info" [routerLink]="['/search/',user.login]">{{user.login}}</button>
+                            </span>
                         </div>
                     </div>
                 </div>

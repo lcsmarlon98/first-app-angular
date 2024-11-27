@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubApiService } from '../../services/github.service';
 import { GithubUserInterface } from '../../interfaces/github-user.interface';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
